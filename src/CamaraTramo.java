@@ -6,32 +6,32 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 public class CamaraTramo extends Camara implements Serializable{
-    /*---ATRIBUTOS---*/
+    // Atributos
     private LocalDateTime fechaHora;
 
-    /*---CONSTRUCTOR---*/
+    // Constructor
     public CamaraTramo() {
         super();
         fechaHora = null;
     }
 
-    /*---GETTER---*/
+    // Getter
     public LocalDateTime getFechaHora() {
         return fechaHora;
     }
 
-    /*---SETTER---*/
+    // Setter
     public void setFechaHora(LocalDateTime fechaHora) {
         this.fechaHora = fechaHora;
     }
 
-    /*---METODO para detectar el vehiculo---*/
+    // Detecta el vehículo
     public void detectarVehiculo(String mI) {
         super.detectarVehiculo(mI);
         fechaHora = LocalDateTime.now();
     }
 
-    /*---METODO heredado de la clase padre para enviar los datos---*/
+    // Implementación del método abstracto para enviar los datos
     @Override
     public Vehiculo listoEnvioDatos(SistemaPeaje sistema) {
         Vehiculo v = new Vehiculo(getMatriculaInsertada(), getFechaHora(), null);

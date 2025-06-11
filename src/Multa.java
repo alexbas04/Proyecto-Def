@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Multa implements Serializable {
-    /*---ATRIBUTOS---*/
+    // Atributos
     private String matricula;
     private LocalDateTime fechaHora;  // Se toma desde la cámara
     private double velocidad;
@@ -15,7 +15,7 @@ public class Multa implements Serializable {
     private boolean pagada;
     private TipoRadar tipoRadar;
 
-    /*---CONSTRUCTOR---*/
+    // Constructor
     public Multa(String matricula, double velocidad, TipoRadar tipoRadar) {
         this.matricula = matricula;
         this.fechaHora = LocalDateTime.now();
@@ -26,7 +26,7 @@ public class Multa implements Serializable {
     }
 
 
-    /*---METODO para calcular importes según la Tabla 2 ---*/
+    // Calcula el importe según la Tabla 2
     private double calcularImporte() {
         if (tipoRadar == TipoRadar.RADAR_TRAMO) {
             if (velocidad <= 130) return 150;
@@ -41,7 +41,7 @@ public class Multa implements Serializable {
         }
     }
 
-    /*---GETTERS---*/
+    // Getters
     public String getMatricula() {
         return matricula;
     }
@@ -66,17 +66,17 @@ public class Multa implements Serializable {
         return pagada;
     }
 
-    /*---SETTER---*/
+    // Setter
     public void setPagada(boolean pagada) {
         this.pagada = pagada;
     }
 
-    /*---METODO para formatear la fecha---*/
+    // Formatea la fecha
     private String fechaString(LocalDateTime f){
         return f.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
     }
 
-    /*---METODO toString---*/
+    // toString
     @Override
     public String toString() {
         return "Multa [" +

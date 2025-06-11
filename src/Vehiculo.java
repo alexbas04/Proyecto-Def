@@ -6,13 +6,13 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 public class Vehiculo implements Serializable{
-    /*---ATRIBUTOS---*/
+    // Atributos
     private String matricula;
     private double tamanio;
     private LocalDateTime fechaHora;
     private Double velocidad;
 
-    /*---CONSTRUCTORES---*/
+    // Constructores
     public Vehiculo(String ma, double tam,LocalDateTime fechH, Double vel) {
         if ((ma != null) && (esMatriculaValida(ma))) {
             matricula = ma;
@@ -56,7 +56,7 @@ public class Vehiculo implements Serializable{
         }
         return true;
     }
-    /*---GETTERS---*/
+    // Getters
     public LocalDateTime getFechaHora() {
         return fechaHora;
     }
@@ -69,7 +69,7 @@ public class Vehiculo implements Serializable{
         return matricula;
     }
 
-    /*---SETTERS---*/
+    // Setters
     public void setFechaHora(LocalDateTime fechaHora) {
         this.fechaHora = fechaHora;
     }
@@ -78,7 +78,7 @@ public class Vehiculo implements Serializable{
         this.velocidad = velocidad;
     }
 
-    /*---METODOS toString,eguals y hashcode---*/
+    // Métodos toString, equals y hashCode
     @Override
     public String toString() {
         return "Matrícula: " + matricula +

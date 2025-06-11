@@ -5,28 +5,28 @@
 import java.io.Serializable;
 
 public class RadarMovil extends Camara implements Serializable{
-    /*---ATRIBUTOS---*/
+    // Atributos
     private double velocidadDetectada;
 
-    /*---CONSTRUCTOR---*/
+    // Constructor
     public RadarMovil() {
         super();
         velocidadDetectada = 0.0;
     }
 
-    /*---METODO para detectar el vehiculo---*/
+    // Detecta el vehículo
     public void detectarVehiculo(String mI, double velocidad) {
         velocidadDetectada = velocidad;
         super.detectarVehiculo(mI);
 
     }
 
-    /*---GETTER---*/
+    // Getter
     public double getVelocidadDetectada() {
         return velocidadDetectada;
     }
 
-    /*---Funcion del metodo padre---*/
+    // Implementación del método abstracto
     @Override
     public Vehiculo listoEnvioDatos(SistemaPeaje sistema) {
         Vehiculo v = new Vehiculo(getMatriculaInsertada(), 0.0, null, velocidadDetectada);
@@ -37,7 +37,7 @@ public class RadarMovil extends Camara implements Serializable{
         return v;
     }
 
-    /*---METODO toString---*/
+    // toString
     @Override
     public String toString() {
         return "RadarMovil{" +

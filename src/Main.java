@@ -24,7 +24,7 @@ public class Main {
             scanner.nextLine();
 
             switch (opcionPrincipal) {
-                case 1: /*--- OPERARIO ---*/
+                case 1: // Operario
                     boolean volverOperario = false;
                     while (!volverOperario) {
                         sistema.menuOperario();
@@ -200,7 +200,7 @@ public class Main {
                     }
                     break;
 
-                case 2: /*--- AGENTE ---*/
+                case 2: // Agente
                     boolean volverAgente = false;
                     while (!volverAgente) {
                         sistema.menuAgentes();
@@ -252,7 +252,7 @@ public class Main {
                     }
                     break;
 
-                case 3: /*--- CONDUCTOR ---*/
+                case 3: // Conductor
                     boolean volverConductor = false;
                     while (!volverConductor) {
                         sistema.menuConductores();
@@ -320,7 +320,7 @@ public class Main {
                         }
                     }
                     break;
-                case 4: /*--- SALIDA SISTEMA ---*/
+                case 4: // Salida del sistema
                     sistema.guardarSistemaPeaje("datos/peaje.dat"); /*Antes de salir guardamos los datos en el fichero peaje*/
                     System.out.println("Datos guardados correctamente. Saliendo...");
                     salir = true;

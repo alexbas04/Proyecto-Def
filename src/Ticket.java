@@ -7,13 +7,13 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Ticket implements Serializable {
-    /*---ATRIBUTOS---*/
+    // Atributos
     private String matricula;
     private double tamanio;
     private LocalDateTime fechaHora;
     private double importe;
 
-    /*---CONSTRUCTOR---*/
+    // Constructor
     public Ticket(String m, double t, LocalDateTime fH, double i) {
         if ((m != null) && (!m.isEmpty()) && (fH!=null) && (t>0.0) && (i>0.0)) {
             matricula = m;
@@ -23,7 +23,7 @@ public class Ticket implements Serializable {
         }
     }
 
-    /*---GETTERS---*/
+    // Getters
     public String getMatricula() {
         return matricula;
     }
@@ -40,12 +40,12 @@ public class Ticket implements Serializable {
         return importe;
     }
 
-    /*---METODO para formatear la fecha---*/
+    // Formatea la fecha
     private String fechaString(LocalDateTime f) {
         return f.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
     }
 
-    /*---METODO toString---*/
+    // toString
     @Override
     public String toString() {
         return "Ticket{" +
