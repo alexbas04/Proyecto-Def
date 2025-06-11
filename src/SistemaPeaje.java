@@ -10,35 +10,35 @@ import java.time.LocalDateTime;
 import java.io.Serializable;
 
 public class SistemaPeaje implements Serializable{
-    /*---ATRIBUTOS---*/
+    // Atributos
     private int contadorNumeroVehiculos;
     private List<Camara> camaras;
     private List<Multa> multas;
     private List<Ticket> tickets;
     private Set<Vehiculo> cochesDentroPeaje;
 
-    /*---CONSTRUCTOR---*/
+    // Constructor
     public SistemaPeaje() {
         contadorNumeroVehiculos = 0;
         multas = new ArrayList<>();
         tickets = new ArrayList<>();
         camaras = new ArrayList<>();
         cochesDentroPeaje = new HashSet<>();
-        /*---Hemos decidido implementar 4 camaras de cada tipo porque existen 4 carriles (1 por carril)---*/
-        for (int i = 0; i < 4; i++) {/*--- 4 camaras de peaje posicionadas en la salida--*/
+        // Se instalan cuatro cámaras de cada tipo, una por carril
+        for (int i = 0; i < 4; i++) { // 4 cámaras de peaje en la salida
             camaras.add(new CamaraPeaje());
         }
 
-        for (int i = 0; i < 4; i++) {/*--- 4 camaras de tramo posicionadas en la entrada ---*/
+        for (int i = 0; i < 4; i++) { // 4 cámaras de tramo en la entrada
             camaras.add(new CamaraTramo());
         }
 
-        for (int i = 0; i < 4; i++) {/*--- 4 camaras radar movil en posiciones intermedias ---*/
+        for (int i = 0; i < 4; i++) { // 4 radares móviles en posiciones intermedias
             camaras.add(new RadarMovil());
         }
     }
 
-    /*---GETTER---*/
+    // Getter
     public List<Camara> getCamaras() {
         return camaras;
     }

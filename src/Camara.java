@@ -5,22 +5,22 @@
 import java.io.Serializable;
 
 public abstract class Camara implements Serializable{
-    /*---ATRIBUTOS---*/
+    // Atributos
     private String matriculaInsertada;
     private EstadoCamara estadoC;
 
-    /*---CONSTRUCTOR---*/
+    // Constructor
     public Camara() {
         matriculaInsertada = null;
         estadoC = EstadoCamara.ACTIVADA;
     }
 
-    /*---GETTER---*/
+    // Getter
     public String getMatriculaInsertada() {
         return matriculaInsertada;
     }
 
-    /*---SETTERS---*/
+    // Setters
     public void setMatriculaInsertada(String matriculaInsertada) {
         this.matriculaInsertada = matriculaInsertada;
     }
@@ -29,14 +29,14 @@ public abstract class Camara implements Serializable{
         this.estadoC = estadoC;
     }
 
-    /*---METODO para detectar el vehiculo---*/
+    // Detecta el vehículo
     public void detectarVehiculo(String mI) {
         if ((mI != null) && (!mI.isEmpty()))
             matriculaInsertada = mI;
         estadoC = EstadoCamara.TRANSMISION;
     }
 
-    /*---METODO toString---*/
+    // toString
     @Override
     public String toString() {
         return "Camara{" +
@@ -45,7 +45,7 @@ public abstract class Camara implements Serializable{
                 '}';
     }
 
-    /*---METODO abstracto que heredan los hijos para enviar los datos---*/
+    // Método abstracto que heredan los hijos para enviar los datos
     public abstract Vehiculo listoEnvioDatos(SistemaPeaje sistema);
 
 }

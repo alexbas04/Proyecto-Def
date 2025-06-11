@@ -7,18 +7,18 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class CamaraPeaje extends Camara implements Serializable{
-    /*---ATRIBUTOS---*/
+    // Atributos
     private double tamanioInsertado;
     private LocalDateTime fechaHora;
 
-    /*---CONSTRUCTOR---*/
+    // Constructor
     public CamaraPeaje() {
         super();
         tamanioInsertado = 0;
         fechaHora = null;
     }
 
-    /*---METODO para detectar el vehiculo---*/
+    // Detecta el vehículo e introduce los datos
     public void detectarVehiculo(String mI, double tI, String fech) {
         super.detectarVehiculo(mI);
         if ((tI != 0.0))
@@ -26,7 +26,7 @@ public class CamaraPeaje extends Camara implements Serializable{
         fechaHora = LocalDateTime.parse(fech, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
     }
 
-    /*---GETTERS---*/
+    // Getters
     public LocalDateTime getFechaHora() {
         return fechaHora;
     }
@@ -35,7 +35,7 @@ public class CamaraPeaje extends Camara implements Serializable{
         return tamanioInsertado;
     }
 
-    /*---SETTERS---*/
+    // Setters
     public void setTamanioInsertado(double tamanioInsertado) {
         this.tamanioInsertado = tamanioInsertado;
     }
@@ -44,7 +44,7 @@ public class CamaraPeaje extends Camara implements Serializable{
         this.fechaHora = fechaHora;
     }
 
-    /*---METODO heredado de la clase padre para enviar los datos---*/
+    // Implementación del método abstracto para enviar los datos
     @Override
     public Vehiculo listoEnvioDatos(SistemaPeaje sistema) {
         Vehiculo v = new Vehiculo(getMatriculaInsertada(), getTamanioInsertado(), getFechaHora(), null);
