@@ -30,6 +30,10 @@ public class Main {
                         sistema.menuOperario();
                         int opcionOperario = scanner.nextInt();
                         scanner.nextLine();
+                        if (opcionOperario == -1) {
+                            volverOperario = true;
+                            continue;
+                        }
 
                         switch (opcionOperario) {
                             case 1:
@@ -206,6 +210,10 @@ public class Main {
                         sistema.menuAgentes();
                         int opcionAgente = scanner.nextInt();
                         scanner.nextLine();
+                        if (opcionAgente == -1) {
+                            volverAgente = true;
+                            continue;
+                        }
 
                         switch (opcionAgente) {
                             case 1:
@@ -258,6 +266,10 @@ public class Main {
                         sistema.menuConductores();
                         int opcionConductor = scanner.nextInt();
                         scanner.nextLine();
+                        if (opcionConductor == -1) {
+                            volverConductor = true;
+                            continue;
+                        }
 
                         switch (opcionConductor) {
                             case 1:

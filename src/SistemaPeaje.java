@@ -83,7 +83,7 @@ public class SistemaPeaje implements Serializable{
         System.out.println("[2.] Agente de la autoridad\n");
         System.out.println("[3.] Conductor\n");
         System.out.println("[4.] Salir\n");
-        System.out.print("--> Seleccione una opción: ");
+        System.out.print("--> Seleccione una opción (o -1 para volver): ");
     }
     public void menuOperario() {
         System.out.print("\n\t Selecciona una opción para continuar:\n");
@@ -93,14 +93,14 @@ public class SistemaPeaje implements Serializable{
         System.out.println("[4.] Generar ticket de peaje\n");
         System.out.println("[5.] Consultar peajes de un determinado vehículo\n");
         System.out.println("[6.] Volver al menu principal\n");
-        System.out.print("--> Seleccione una opción: ");
+        System.out.print("--> Seleccione una opción (o -1 para volver): ");
     }
 
     public void menuAgentes() {
         System.out.print("\n\t Selecciona una opción para continuar: \n");
         System.out.println("[1.] Generar una Multa \n");
         System.out.println("[2.] Volver al menu principal\n");
-        System.out.print("--> Seleccione una opción: ");
+        System.out.print("--> Seleccione una opción (o -1 para volver): ");
     }
 
     public void menuConductores() {
@@ -109,7 +109,7 @@ public class SistemaPeaje implements Serializable{
         System.out.println("[2.] Consultar las multas pendientes de pago\n");
         System.out.println("[3.] Pagar las multas\n");
         System.out.println("[4.] Volver al menu principal\n");
-        System.out.print("--> Seleccione una opción: ");
+        System.out.print("--> Seleccione una opción (o -1 para volver): ");
     }
 
     public void generarMultaRadarMovil(String matricula, double velocidad) {
