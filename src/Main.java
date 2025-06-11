@@ -250,6 +250,7 @@ public class Main {
                                 } else {
                                     System.out.println("Cámara no válida.");
                                 }
+                                break;
 
                             case 2:
                                 volverAgente = true;
